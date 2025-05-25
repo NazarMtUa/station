@@ -11,6 +11,7 @@ namespace Content.Server.NPC.Systems;
 
 public sealed partial class NPCCombatSystem
 {
+    [Dependency] private readonly IRobustRandom _rng = default!;
     private const float TargetMeleeLostRange = 14f;
 
     private void InitializeMelee()
@@ -97,7 +98,7 @@ public sealed partial class NPCCombatSystem
         // TODO: When I get parallel operators move this as NPC combat shouldn't be handling this.
         _steering.Register(uid, new EntityCoordinates(component.Target, Vector2.Zero), steering);
 
-        if (distance > weapon.Range * weapon.LightRangeModifier)
+        if (distance > weapon.Range)
         {
             component.Status = CombatStatus.TargetOutOfRange;
             return;
@@ -128,6 +129,6 @@ public sealed partial class NPCCombatSystem
         }
 
         if (Comp<HTNComponent>(uid).Blackboard.TryGetValue<float>("AttackDelayDeviation", out var dev, EntityManager))
-            weapon.NextAttack += TimeSpan.FromSeconds(_random.NextFloat(-dev, dev));
+            weapon.NextAttack += TimeSpan.FromSeconds(_rng.NextFloat(-dev, dev));
     }
 }

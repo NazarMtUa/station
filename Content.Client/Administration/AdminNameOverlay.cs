@@ -15,8 +15,6 @@ namespace Content.Client.Administration;
 internal sealed class AdminNameOverlay : Overlay
 {
     [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private ILocalizationManager _localization = default!;
-
 
     private readonly AdminSystem _system;
     private readonly IEntityManager _entityManager;
@@ -28,13 +26,13 @@ internal sealed class AdminNameOverlay : Overlay
     //TODO make this adjustable via GUI
     private readonly ProtoId<RoleTypePrototype>[] _filter =
         ["SoloAntagonist", "TeamAntagonist", "SiliconAntagonist", "FreeAgent"];
-    private readonly string _antagLabelClassic = "";
+    private readonly string _antagLabelClassic = Loc.GetString("admin-overlay-antag-classic");
     private readonly Color _antagColorClassic = Color.OrangeRed;
 
     public AdminNameOverlay(AdminSystem system, IEntityManager entityManager, IEyeManager eyeManager, IResourceCache resourceCache, EntityLookupSystem entityLookup, IUserInterfaceManager userInterfaceManager)
     {
         IoCManager.InjectDependencies(this);
-        _antagLabelClassic = _localization.GetString("admin-overlay-antag-classic");
+
         _system = system;
         _entityManager = entityManager;
         _eyeManager = eyeManager;
@@ -89,7 +87,7 @@ internal sealed class AdminNameOverlay : Overlay
             }
             else if (!classic && _filter.Contains(playerInfo.RoleProto.ID))
             {
-               var label = _localization.GetString(playerInfo.RoleProto.Name).ToUpper();
+               var label = Loc.GetString(playerInfo.RoleProto.Name).ToUpper();
                var color = playerInfo.RoleProto.Color;
 
                 args.ScreenHandle.DrawString(_font, screenCoordinates + (lineoffset * 2), label, uiScale, color);

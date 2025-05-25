@@ -46,16 +46,6 @@
           type: Vampiric
         reagent: Omnizine
         amount: 0.3
-      - !type:ChemAddMoodlet
-        moodPrototype: DrankBlood
-        conditions:
-          - !type:OrganType
-            type: Human
-      - !type:ChemAddMoodlet
-        moodPrototype: DrankBloodVampiric
-        conditions:
-          - !type:OrganType
-            type: Vampiric
     Food:
       effects:
         - !type:AdjustReagent
@@ -94,11 +84,6 @@
   recognizable: true
   physicalDesc: reagent-physical-desc-slimy
   slippery: false
-  metabolisms:
-    Drink:
-      effects:
-        - !type:ChemAddMoodlet
-          moodPrototype: DrankInsectBlood
 
 - type: reagent
   id: Slime
@@ -161,14 +146,6 @@
   recognizable: true
   physicalDesc: reagent-physical-desc-metallic
   slippery: false
-  metabolisms:
-    Drink:
-      effects:
-        - !type:ChemAddMoodlet
-          moodPrototype: DrankBlood
-          conditions:
-            - !type:OrganType
-              type: Human
 
 - type: reagent
   parent: Blood
@@ -181,14 +158,6 @@
   recognizable: true
   physicalDesc: reagent-physical-desc-pungent
   slippery: false
-  metabolisms:
-    Drink:
-      effects:
-        - !type:ChemAddMoodlet
-          moodPrototype: DrankBlood
-          conditions:
-            - !type:OrganType
-              type: Human
 
 - type: reagent
   id: ZombieBlood
@@ -213,9 +182,6 @@
             Poison: 4
       - !type:ChemVomit
         probability: 0.25
-      - !type:CauseZombieInfection
-      - !type:ChemAddMoodlet
-        moodPrototype: DrankZombieBlood
 
 - type: reagent
   id: Ichor
@@ -284,8 +250,6 @@
       - !type:AdjustReagent
         reagent: Nutriment
         amount: 0.1
-      - !type:ChemAddMoodlet
-        moodPrototype: DrankVomit
   footstepSound:
     collection: FootstepBlood
     params:

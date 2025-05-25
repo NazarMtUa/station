@@ -7,7 +7,6 @@ using Content.Shared.Weapons.Ranged.Events;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Random;
 
 namespace Content.Server.NPC.Systems;
 
@@ -203,8 +202,6 @@ public sealed partial class NPCCombatSystem
             {
                 return;
             }
-
-            gun.Target = comp.AlwaysDirectTargets || _random.Prob(comp.DirectTargetChance) ? comp.Target : null;
 
             _gun.AttemptShoot(uid, gunUid, gun, targetCordinates);
         }

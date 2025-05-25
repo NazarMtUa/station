@@ -262,7 +262,7 @@
         conditions:
         - !type:ReagentThreshold
           reagent: Ethanol
-          min: 1
+          min: 5
 
 - type: reagent
   id: Gin

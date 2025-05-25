@@ -1,8 +1,8 @@
-namespace Content.Shared._Pirate.Aiming.Events;
+using Robust.Shared.GameObjects;
 
-/// <summary>
-/// Raised when an entity that is being aimed at moves.
-/// </summary>
+namespace Content.Shared._Pirate.Actions.Events;
+
+// This is a local event, not a networked event
 public sealed class OnAimingTargetMoveEvent : EntityEventArgs
 {
     public readonly EntityUid Target;
@@ -11,5 +11,4 @@ public sealed class OnAimingTargetMoveEvent : EntityEventArgs
     {
         Target = target;
     }
-
 }

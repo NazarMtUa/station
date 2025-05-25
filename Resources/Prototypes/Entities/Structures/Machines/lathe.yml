@@ -91,7 +91,7 @@
   id: Autolathe
   parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
   name: "автолат"
-  description: "Виробляє базові предмети, використовуючи метал та скло."
+  description: "Тут виготовляють базові вироби з металу та скла."
   components:
   - type: Sprite
     sprite: Structures/Machines/autolathe.rsi
@@ -271,20 +271,12 @@
     - MagazineMagnum # Goobstation
     - MagazineMagnumLeverRifleEmpty # Goobstation
     - MagazineMagnumLeverRifle # Goobstation
-    - CartridgeEpinephrine # Goobstation
-    - CartridgeBicaridine # Goobstation
-    - CartridgeDermaline # Goobstation
-    - CartridgeEphedrine # Goobstation
-    - CartridgeAtropine # Goobstation
-    - CartridgePuncturase # Goobstation
-    - SecHypo # Goobstation
-    - ParamedHypo # Goobstation - ParamedHypo
 
 - type: entity
   id: AutolatheHyperConvection
   parent: [Autolathe, BaseHyperlathe]
   name: "гіперконвекційний автолат"
-  description: "Високоекспериментальний автолат, який використовує потужність надзвичайного тепла для повільного та більш економічно ефективного створення об'єктів."
+  description: "Експериментальний автолат, який використовує силу екстремального тепла, щоб повільно створювати об'єкти більш економічно ефективно."
   components:
   - type: Sprite
     sprite: Structures/Machines/autolathe_hypercon.rsi
@@ -294,8 +286,8 @@
 - type: entity
   id: Protolathe
   parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
-  name: "протолат"
-  description: "Перетворює сировину на вдосконалені предмети."
+  name: "протолате"
+  description: "Перетворює сировину на готові вироби."
   components:
   - type: Sprite
     sprite: Structures/Machines/protolathe.rsi
@@ -482,7 +474,7 @@
   id: ProtolatheHyperConvection
   parent: [Protolathe, BaseHyperlathe]
   name: "гіперконвекційний протолат"
-  description: "Високоекспериментальний протолат, який використовує потужність надзвичайного тепла для повільного та більш економічно ефективного створення об'єктів."
+  description: "Високоекспериментальний протолат, який використовує силу екстремального тепла, щоб повільно створювати об'єкти більш економічно ефективно."
   components:
   - type: Sprite
     sprite: Structures/Machines/protolathe_hypercon.rsi
@@ -492,8 +484,8 @@
 - type: entity
   id: CircuitImprinter
   parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
-  name: "друкар плат"
-  description: "Друкує плати для механізмів."
+  name: "принтер для друку схем"
+  description: "Друкує друковані плати для машин."
   components:
   - type: Sprite
     sprite: Structures/Machines/circuit_imprinter.rsi
@@ -656,8 +648,8 @@
 - type: entity
   id: CircuitImprinterHyperConvection
   parent: [CircuitImprinter, BaseHyperlathe]
-  name: "гіперконвекційний друкар плат"
-  description: "Високоекспериментальний друкар плат, який використовує потужність надзвичайного тепла для повільного та більш економічно ефективного створення об'єктів."
+  name: "гіперконвекційний контурний принтер"
+  description: "Експериментальний схемотехнічний імпринтер, який використовує силу екстремального тепла для повільного створення об'єктів з меншими витратами."
   components:
   - type: Sprite
     sprite: Structures/Machines/circuit_imprinter_hypercon.rsi
@@ -667,7 +659,7 @@
 - type: entity
   id: ExosuitFabricator
   parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
-  name: "фабрикатор екзокостюмів"
+  name: "виробник екзокостюмів"
   description: "Створює деталі для робототехніки та інших механічних потреб"
   components:
   - type: Sprite
@@ -850,7 +842,7 @@
   id: Biofabricator
   parent: [BaseLathe, BaseMaterialSiloUtilizer]
   name: "біофабрикатор"
-  description: "Виробляє куби тварин, використовуючи біомасу."
+  description: "Виробляє анімалістичні кубики з біомаси."
   components:
   - type: Sprite
     sprite: Structures/Machines/biofabricator.rsi
@@ -901,8 +893,8 @@
 - type: entity
   id: SecurityTechFab
   parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
-  name: "техфаб служби безпеки"
-  description: "Друкує обладнання для використання службою безпеки."
+  name: "security techfab"
+  description: "Друкує обладнання для використання охоронцями."
   components:
   - type: Sprite
     sprite: Structures/Machines/techfab.rsi
@@ -1018,12 +1010,6 @@
       - ClothingHeadHelmetBasic
       - MagazineShotgunBeanbag
       - ShellTranquilizer
-      - CartridgeEpinephrine # Goobstation
-      - CartridgeBicaridine # Goobstation
-      - CartridgeDermaline # Goobstation
-      - CartridgeAtropine # Goobstation
-      - CartridgeSaline # Goobstation
-      - SecHypo # Goobstation
       - BoxBeanbag
       - CartridgePistolRubber
       - CartridgeMagnumRubber
@@ -1196,8 +1182,8 @@
 - type: entity
   id: AmmoTechFab
   parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
-  name: "техфаб боєприпасів"
-  description: "Друкує мінімально необхідну кількість набоїв, яка може знадобитися будь-якій бюджетній армії чи зброярні. Нічого особливого."
+  name: "боєприпасів techfab"
+  description: "Друкує мінімум набоїв, який може знадобитися будь-якій бюджетній армії чи збройовому складу. Нічого особливого."
   components:
     - type: Sprite
       sprite: Structures/Machines/techfab.rsi
@@ -1276,8 +1262,8 @@
 - type: entity
   id: MedicalTechFab
   parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
-  name: "медичний техфаб"
-  description: "Друкує обладнання для використання медблоком."
+  name: "медична лабораторія"
+  description: "Друкує обладнання для медпункту."
   components:
   - type: Sprite
     sprite: Structures/Machines/techfab.rsi
@@ -1339,14 +1325,8 @@
     - AACTablet # DeltaV
     - VehicleWheelchairFolded # Goobstation - Vehicles
     - SyringeCase # Morphine
-    - ConicalFlask #PIRATE
-    - LargeConicalFlask #PIRATE
-    - CartridgeAtropine # Goobstation - ParamedHypo
-    - CartridgeEpinephrine # Goobstation - ParamedHypo
-    - CartridgeBicaridine # Goobstation - ParamedHypo
-    - CartridgeDermaline # Goobstation - ParamedHypo
-    - CartridgeSaline # Goobstation - ParamedHypo
-    - ParamedHypo # Goobstation - ParamedHypo
+    - ConicalFlask
+    - LargeConicalFlask
     dynamicRecipes:
     - ChemicalPayload
     - CryostasisBeaker
@@ -1364,11 +1344,6 @@
     - OmnimedTool
     - MedicalCyberneticEyes
     - RapidSyringeGun # Goobstation
-  - type: EmagLatheRecipes
-    emagStaticRecipes:
-    - CartridgeEphedrine
-    - CartridgePuncturase
-    - CartridgeTirizene
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
@@ -1377,8 +1352,8 @@
 - type: entity
   parent: [BaseLathe, BaseMaterialSiloUtilizer]
   id: UniformPrinter
-  name: "принтер уніформ"
-  description: "Друкує нову або запасну уніформу."
+  name: "уніфікований принтер"
+  description: "Друкує нову або замінну форму."
   components:
   - type: Transform
     noRot: false
@@ -1607,7 +1582,7 @@
   parent: [BaseLathe, BaseMaterialSiloUtilizer]
   id: OreProcessor
   name: "переробник руди"
-  description: "Виробляє листи та злитки, використовуючи руди."
+  description: "Він виробляє листи та злитки з руди."
   components:
   - type: Sprite
     sprite: Structures/Machines/ore_processor.rsi
@@ -1679,8 +1654,8 @@
 - type: entity
   parent: [BaseLathe, BaseMaterialSiloUtilizer]
   id: Sheetifier
-  name: "листороб-2000"
-  description: "Та ще листова машина."
+  name: "sheet-meister 2000"
+  description: "Дуже брудна машина."
   components:
   - type: Sprite
     sprite: Structures/Machines/sheetifier.rsi
@@ -1710,8 +1685,8 @@
 - type: entity
   parent: [BaseLathe, BaseMaterialSiloUtilizer]
   id: PrizeCounter
-  name: "прилавок з призами"
-  description: "Заберіть свій приз та виграйте іграшки та милі плюшеві іграшки!"
+  name: "стійка для призів"
+  description: "Отримайте свій приз і виграйте іграшки та милі плюшеві іграшки!"
   components:
   - type: AmbientOnPowered
   - type: AmbientSound

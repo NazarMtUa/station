@@ -1,8 +1,8 @@
 - type: entity
-  name: "ліхтарик"
+  name: flashlight
   parent: BaseItem
   id: FlashlightLantern
-  description: "Він освітлює шлях до свободи."
+  description: It lights the way to freedom.
   components:
   - type: Tag
     tags:
@@ -87,10 +87,10 @@
   - type: AttachmentFlashlight # Lavaland Change
 
 - type: entity
-  name: "ліхтарик служби безпеки"
+  name: seclite
   parent: FlashlightLantern
   id: FlashlightSeclite
-  description: "Міцний ліхтарик, що використовується службою безпеки."
+  description: A robust flashlight used by security.
   components:
   - type: Tag
     tags:
@@ -126,7 +126,7 @@
         Blunt: 8
     bluntStaminaDamageFactor: 2.5
     heavyRateModifier: 2
-    heavyRangeModifier: 1.2
+    heavyRangeModifier: 1.75
     heavyDamageBaseModifier: 1.25
     maxTargets: 1
     angle: 20

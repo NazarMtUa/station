@@ -16,8 +16,6 @@ namespace Content.Client.Access.UI
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
-        [Dependency] private readonly ILocalizationManager _localization = default!;
-        
         private readonly ISawmill _logMill = default!;
 
         private readonly IdCardConsoleBoundUserInterface _owner;
@@ -63,7 +61,7 @@ namespace Content.Client.Access.UI
                 }
 
                 _jobPrototypeIds.Add(job.ID);
-                JobPresetOptionButton.AddItem(_localization.GetString(job.Name), _jobPrototypeIds.Count - 1);
+                JobPresetOptionButton.AddItem(Loc.GetString(job.Name), _jobPrototypeIds.Count - 1);
             }
 
             JobPresetOptionButton.OnItemSelected += SelectJobPreset;
@@ -95,7 +93,7 @@ namespace Content.Client.Access.UI
                 return;
             }
 
-            JobTitleLineEdit.Text = _localization.GetString(job.Name);
+            JobTitleLineEdit.Text = Loc.GetString(job.Name);
             args.Button.SelectId(args.Id);
 
             ClearAllAccess();
@@ -131,14 +129,14 @@ namespace Content.Client.Access.UI
         public void UpdateState(IdCardConsoleBoundUserInterfaceState state)
         {
             PrivilegedIdButton.Text = state.IsPrivilegedIdPresent
-                ? _localization.GetString("id-card-console-window-eject-button")
-                : _localization.GetString("id-card-console-window-insert-button");
+                ? Loc.GetString("id-card-console-window-eject-button")
+                : Loc.GetString("id-card-console-window-insert-button");
 
             PrivilegedIdLabel.Text = state.PrivilegedIdName;
 
             TargetIdButton.Text = state.IsTargetIdPresent
-                ? _localization.GetString("id-card-console-window-eject-button")
-                : _localization.GetString("id-card-console-window-insert-button");
+                ? Loc.GetString("id-card-console-window-eject-button")
+                : Loc.GetString("id-card-console-window-insert-button");
 
             TargetIdLabel.Text = state.TargetIdName;
 

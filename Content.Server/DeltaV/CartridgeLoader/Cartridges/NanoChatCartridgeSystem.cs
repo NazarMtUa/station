@@ -59,12 +59,14 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
         base.Update(frameTime);
 
         // Update card references for any cartridges that need it
-        var query = EntityQueryEnumerator<NanoChatCartridgeComponent>();
-        while (query.MoveNext(out var uid, out var nanoChat))
+        var query = EntityQueryEnumerator<NanoChatCartridgeComponent, CartridgeComponent>();
+        while (query.MoveNext(out var uid, out var nanoChat, out var cartridge))
         {
-            if (!TryComp(uid, out CartridgeComponent? cartridge)
-                || cartridge.LoaderUid == null
-                || !TryComp(cartridge.LoaderUid, out PdaComponent? pda))
+            if (cartridge.LoaderUid == null)
+                continue;
+
+            // Check if we need to update our card reference
+            if (!TryComp<PdaComponent>(cartridge.LoaderUid, out var pda))
                 continue;
 
             var newCard = pda.ContainedId;

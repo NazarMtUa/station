@@ -27,12 +27,12 @@ public abstract class MovementTest : InteractionTest
     /// <summary>
     ///     If true, the grid will generate gravity.
     /// </summary>
-    protected virtual new bool AddGravity => true;
+    protected virtual bool AddGravity => true;
 
     /// <summary>
     ///     If true, the grid will generate an atmosphere.
     /// </summary>
-    protected virtual new bool AddAtmosphere => true;
+    protected virtual bool AddAtmosphere => true;
 
     [SetUp]
     public override async Task Setup()

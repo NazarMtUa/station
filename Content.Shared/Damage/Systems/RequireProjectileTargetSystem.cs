@@ -46,6 +46,6 @@ public sealed class RequireProjectileTargetSystem : EntitySystem
 
     private void LayingBulletPass(Entity<RequireProjectileTargetComponent> ent, ref DownedEvent args)
     {
-        SetActive(ent, false); // PIRATE
+        SetActive(ent, true);
     }
 }

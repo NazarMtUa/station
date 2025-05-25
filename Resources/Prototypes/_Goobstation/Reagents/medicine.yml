@@ -132,8 +132,6 @@
       - !type:AdjustReagent
         reagent: Mitogen
         amount: 0.125 # 1.25 per 5u
-      - !type:ChemAddMoodlet
-        moodPrototype: StrongPainkiller
 
 - type: reagent
   id: Mitogen
@@ -724,8 +722,6 @@
         conditions:
         - !type:ReagentThreshold
           min: 20
-      - !type:ChemAddMoodlet
-        moodPrototype: MildPainkiller
 
 # Externally applied meds
 
@@ -998,8 +994,8 @@
           min: 0
           max: 35
       - !type:MovespeedModifier # and basically every visual/combat side effect that can be reasonably put
-        walkSpeedModifier: 0.75
-        sprintSpeedModifier: 0.75
+        walkSpeedModifier: 0.7
+        sprintSpeedModifier: 0.7
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
@@ -1011,8 +1007,8 @@
         conditions:
         - !type:ReagentThreshold
           min: 35
-        probability: 0.1
-        paralyzeTime: 2
+        probability: 0.2
+        paralyzeTime: 4
       - !type:Drunk
         boozePower: 5
       - !type:HealthChange

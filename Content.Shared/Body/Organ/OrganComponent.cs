@@ -1,5 +1,4 @@
 using Content.Shared.Body.Systems;
-using Content.Shared.Traits;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes; // Shitmed Change
 using Content.Shared._Shitmed.Medical.Surgery; // Shitmed Change
@@ -70,16 +69,4 @@ public sealed partial class OrganComponent : Component, ISurgeryToolComponent //
     [DataField]
     public bool CanEnable = true;
     // Shitmed Change End
-
-    /// <summary>
-    ///     These functions are called when this organ is added/implanted to an entity.
-    /// </summary>
-    [DataField(serverOnly: true)]
-    public TraitFunction[] OnImplantFunctions { get; private set; } = Array.Empty<TraitFunction>();
-
-    /// <summary>
-    ///     These functions are called when this organ is removed from an entity.
-    /// </summary>
-    [DataField(serverOnly: true)]
-    public TraitFunction[] OnRemoveFunctions { get; private set; } = Array.Empty<TraitFunction>();
 }

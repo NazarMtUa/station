@@ -40,15 +40,13 @@
       inverted: true
       traits:
         - Blindness
-        #PIRATE START  # you might have cheap implant or something 
-        # - CyberEyes  
-        # - SecurityEyesModule
-        # - MedicalEyesModule
-        # - DiagnosticEyesModule
-        # - OmniEyesModule
-        # - LightAmplificationModule
-        # - ThermographicVisionModule
-        #PIRATE END
+        - CyberEyes
+        - SecurityEyesModule
+        - MedicalEyesModule
+        - DiagnosticEyesModule
+        - OmniEyesModule
+        - LightAmplificationModule
+        - ThermographicVisionModule
   functions:
     - !type:TraitAddComponent
       components:

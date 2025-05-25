@@ -370,5 +370,3 @@ reagent-effect-guidebook-add-to-chemicals = { $chance ->
         [1] до
         *[-1] з
     } розчину
-reagent-effect-guidebook-remove-moodlet = Видаляє мудлет {$name}.
-reagent-effect-guidebook-purge-moodlets = Видаляє всі активні непостійні мудлети.

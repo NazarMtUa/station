@@ -10,45 +10,50 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
 namespace Content.Shared.Nutrition.Components;
 
 [RegisterComponent, NetworkedComponent, Access(typeof(HungerSystem))]
-[AutoGenerateComponentState(true, fieldDeltas: true), AutoGenerateComponentPause]
+[AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class HungerComponent : Component
 {
     /// <summary>
     /// The current hunger amount of the entity
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField("currentHunger"), ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
     public float CurrentHunger;
 
     /// <summary>
     /// The base amount at which <see cref="CurrentHunger"/> decays.
     /// </summary>
-    [DataField]
+    [DataField("baseDecayRate"), ViewVariables(VVAccess.ReadWrite)]
     public float BaseDecayRate = 0.01666666666f;
 
     /// <summary>
     /// The actual amount at which <see cref="CurrentHunger"/> decays.
     /// Affected by <seealso cref="CurrentThreshold"/>
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField("actualDecayRate"), ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
     public float ActualDecayRate;
 
     /// <summary>
     /// The last threshold this entity was at.
     /// Stored in order to prevent recalculating
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField("lastThreshold"), ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
     public HungerThreshold LastThreshold;
 
     /// <summary>
     /// The current hunger threshold the entity is at
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField("currentThreshold"), ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
     public HungerThreshold CurrentThreshold;
 
     /// <summary>
     /// A dictionary relating HungerThreshold to the amount of <see cref="CurrentHunger"/> needed for each one
     /// </summary>
-    [DataField(customTypeSerializer: typeof(DictionarySerializer<HungerThreshold, float>)), AutoNetworkedField]
+    [DataField("thresholds", customTypeSerializer: typeof(DictionarySerializer<HungerThreshold, float>))]
+    [AutoNetworkedField]
     public Dictionary<HungerThreshold, float> Thresholds = new()
     {
         { HungerThreshold.Overfed, 200.0f },
@@ -61,7 +66,8 @@ public sealed partial class HungerComponent : Component
     /// <summary>
     /// A dictionary relating hunger thresholds to corresponding alerts.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField("hungerThresholdAlerts")]
+    [AutoNetworkedField]
     public Dictionary<HungerThreshold, ProtoId<AlertPrototype>> HungerThresholdAlerts = new()
     {
         { HungerThreshold.Peckish, "Peckish" },
@@ -75,7 +81,8 @@ public sealed partial class HungerComponent : Component
     /// <summary>
     /// A dictionary relating HungerThreshold to how much they modify <see cref="BaseDecayRate"/>.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(DictionarySerializer<HungerThreshold, float>)), AutoNetworkedField]
+    [DataField("hungerThresholdDecayModifiers", customTypeSerializer: typeof(DictionarySerializer<HungerThreshold, float>))]
+    [AutoNetworkedField]
     public Dictionary<HungerThreshold, float> HungerThresholdDecayModifiers = new()
     {
         { HungerThreshold.Overfed, 1.2f },
@@ -88,19 +95,20 @@ public sealed partial class HungerComponent : Component
     /// <summary>
     /// The amount of slowdown applied when an entity is starving
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField("starvingSlowdownModifier"), ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
     public float StarvingSlowdownModifier = 0.75f;
 
     /// <summary>
     /// Damage dealt when your current threshold is at HungerThreshold.Dead
     /// </summary>
-    [DataField]
+    [DataField("starvationDamage")]
     public DamageSpecifier? StarvationDamage;
 
     /// <summary>
     /// The time when the hunger will update next.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), ViewVariables(VVAccess.ReadWrite)]
+    [DataField("nextUpdateTime", customTypeSerializer: typeof(TimeOffsetSerializer)), ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]
     [AutoPausedField]
     public TimeSpan NextUpdateTime;

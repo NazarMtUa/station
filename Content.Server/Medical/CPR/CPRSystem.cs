@@ -1,4 +1,3 @@
-using Content.Server._Pirate.DoNotResuscitate; // PIRATE
 using Content.Server.Atmos.Rotting;
 using Content.Server.DoAfter;
 using Content.Server.Nutrition.EntitySystems;
@@ -65,13 +64,6 @@ public sealed class CPRSystem : EntitySystem
             return;
         }
 
-        // PIRATE START
-        if (HasComp<DoNotResuscitateComponent>(target))
-        {
-            _popupSystem.PopupEntity(Loc.GetString("do-not-resuscitate-popup"), performer, performer);
-            return;
-        }
-        // PIRATE END
         if (_inventory.TryGetSlotEntity(target, "outerClothing", out var outer))
         {
             _popupSystem.PopupEntity(Loc.GetString("cpr-must-remove", ("clothing", outer)), performer, performer);

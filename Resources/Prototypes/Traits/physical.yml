@@ -628,9 +628,7 @@
       traits:
         - Photophobia
         - Blindness
-        # PITARE START
-        # - Nearsighted
-        # PIRATE END
+        - Nearsighted
   functions:
     - !type:TraitPushDescription
       descriptionExtensions:
@@ -985,9 +983,7 @@
         - OmniEyesModule
         - Photophobia
         - Blindness
-        # PIRATE START
-        # - Nearsighted
-        # PIRATE END
+        - Nearsighted
   functions:
     - !type:TraitAddComponent
       components:
@@ -1014,9 +1010,7 @@
         - OmniEyesModule
         - Photophobia
         - Blindness
-        # PITARE START
-        # - Nearsighted
-        # PIRATE END
+        - Nearsighted
   functions:
     - !type:TraitAddComponent
       components:
@@ -1047,9 +1041,7 @@
         - OmniEyesModule
         - Photophobia
         - Blindness
-        # PITARE START
-        # - Nearsighted
-        # PIRATE END
+        - Nearsighted
   functions:
     - !type:TraitAddComponent
       components:
@@ -1081,9 +1073,7 @@
       traits:
         - Photophobia
         - Blindness
-        # PITARE START
-        # - Nearsighted
-        # PIRATE END
+        - Nearsighted
         - MedicalEyesModule
         - DiagnosticEyesModule
         - SecurityEyesModule
@@ -1121,9 +1111,7 @@
       traits:
         - Photophobia
         - Blindness
-        # PITARE START
-        # - Nearsighted
-        # PIRATE END
+        - Nearsighted
   functions:
     - !type:TraitAddComponent
       components:
@@ -1146,9 +1134,7 @@
       traits:
         - Photophobia
         - Blindness
-        # PITARE START
-        # - Nearsighted
-        # PIRATE END
+        - Nearsighted
   functions:
     - !type:TraitAddComponent
       components:

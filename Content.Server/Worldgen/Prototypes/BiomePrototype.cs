@@ -28,45 +28,21 @@ public sealed partial class BiomePrototype : IPrototype, IInheritingPrototype
     /// <summary>
     ///     The valid ranges of noise values under which this biome can be picked.
     /// </summary>
-    [DataField(required: true)]
+    [DataField("noiseRanges", required: true)]
     public Dictionary<string, List<Vector2>> NoiseRanges = default!;
 
     /// <summary>
     ///     Higher priority biomes get picked before lower priority ones.
     /// </summary>
-    [DataField(required: true)]
+    [DataField("priority", required: true)]
     public int Priority { get; private set; }
 
     /// <summary>
     ///     The components that get added to the target map.
     /// </summary>
-    [DataField]
+    [DataField("chunkComponents")]
     [AlwaysPushInheritance]
     public ComponentRegistry ChunkComponents { get; } = new();
-
-    /// <summary>
-    ///     Minimum X coordinate value to spawn this biome.
-    /// </summary>
-    [DataField]
-    public int? MinX;
-
-    /// <summary>
-    ///     Minimum Y coordinate value to spawn this biome.
-    /// </summary>
-    [DataField]
-    public int? MinY;
-
-    /// <summary>
-    ///     Maximum X coordinate value to spawn this biome.
-    /// </summary>
-    [DataField]
-    public int? MaxX;
-
-    /// <summary>
-    ///     Maximum Y coordinate value to spawn this biome.
-    /// </summary>
-    [DataField]
-    public int? MaxY;
 
     //TODO: Get someone to make this a method on componentregistry that does it Correctly.
     /// <summary>
@@ -78,6 +54,7 @@ public sealed partial class BiomePrototype : IPrototype, IInheritingPrototype
         foreach (var data in ChunkComponents.Values)
         {
             var comp = (Component) serialization.CreateCopy(data.Component, notNullableOverride: true);
+            comp.Owner = target; // look im sorry ok this .owner has to live until engine api exists
             entityManager.AddComponent(target, comp);
         }
     }

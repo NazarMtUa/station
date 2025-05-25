@@ -1,4 +1,3 @@
-using Content.Server._Pirate.DoNotResuscitate; // PIRATE
 using Content.Server.Atmos.Rotting;
 using Content.Server.Chat.Systems;
 using Content.Server.DoAfter;
@@ -61,13 +60,6 @@ public sealed class DefibrillatorSystem : EntitySystem
     {
         if (args.Handled || args.Target is not { } target)
             return;
-        // PIRATE START
-        if (HasComp<DoNotResuscitateComponent>(args.Target))
-        {
-            _popup.PopupEntity(Loc.GetString("do-not-resuscitate-popup"), args.User, args.User);
-            return;
-        }
-        // PIRATE END
         args.Handled = TryStartZap(uid, target, args.User, component);
     }
 

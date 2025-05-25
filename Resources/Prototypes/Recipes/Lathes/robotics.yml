@@ -217,7 +217,6 @@
   result: RightLegBorgService
 
 - type: latheRecipe
-  parent: BaseBorgLimbRecipe #Pirate fix crash
   id: HeadBorgService
   result: HeadBorgService
 

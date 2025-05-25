@@ -71,38 +71,3 @@ mood-effect-MorphineBenefit = Морфін допомагає мені забу�
 mood-effect-MorphineWithdrawal = Усе занадто гучне, занадто яскраве. Мені потрібно щось, щоб зняти напругу...
 
 # Хірургія
-mood-effect-DrankBlood = Я щойно випив(ла) солону, теплу кров. Це огидно!
-mood-effect-DrankBloodVampiric = О, що це за солодкий нектар, наче витримане вино.
-mood-effect-DrankInsectBlood = Я щойно випив(ла) слизьку комашину гидоту. Це огидно!
-mood-effect-DrankVomit = Навіщо я щойно випив(ла) цю блювоту? Вона на смак як блювота!
-mood-effect-DrankZombieBlood = ЦЕ БУЛО ОГИДНО НА СМАК, НАЧЕ СМЕРТЬ У РІДКІЙ ФОРМІ!
-
-# Ліки
-mood-effect-EpinephrineEffect = Моя кров наче запалала!
-mood-effect-PsicodineEffect = Я відчуваю повний спокій.
-mood-effect-StrongStimulant = НУМО, БЛЯХА!!!
-mood-effect-MildPaincauser = Моє тіло ниє.
-mood-effect-StrongPaincauser = Агонія гризе мою душу.
-mood-effect-MildPainkiller = Мої болі трохи вщухли.
-mood-effect-StrongPainkiller = Я ледве щось відчуваю, весь мій біль змитий і зник.
-
-# Отрути
-mood-effect-LacerinolEffect = МІЛЬЯРДИ МАЛЕНЬКИХ НОЖІВ УСЕРЕДИНІ МЕНЕ, ДІСТАНЬТЕ ЇХ!
-mood-effect-PuncturaseEffect = МОЄ ТІЛО ПОВНЕ ГОЛОК, ДІСТАНЬТЕ ЇХ!
-mood-effect-BruizineEffect = Я ВІДЧУВАЮ, НІБИ МЕНЕ РОЗЧАВЛЮЄ ТИСЯЧОТОННИЙ КОСМІЧНИЙ КОРАБЕЛЬ!
-mood-effect-TearGasEffect = МОЇ ОЧІ ПЕЧУТЬ, ЦЕ ТАК БОЛЯЧЕ!
-mood-effect-BuzzochloricBeesEffect = О НІ, ТІЛЬКИ НЕ БДЖОЛИ! НЕ БДЖОЛИ! НЕ БДЖОЛИ АААААААААААА! ВОНИ В МОЇХ ОЧАх!
-mood-effect-RomerolEffect = ЗДАЄТЬСЯ, Я ПОМИРАЮ. Я ЛИШЕ ТРУП, ЩО ЧЕКАЄ НА СВОЮ МОГИЛУ.
-mood-effect-PaxEffect = Ого...
-
-# Їжа
-mood-effect-SweetenerEffect = Це було дуже солодко на смак.
-mood-effect-SpicyEffect = Це було гострим на смак, приємно пекучим.
-mood-effect-OilyEffect = Я з'їв(ла) щось, приготоване на солодкій олії.
-mood-effect-SaltyEffect = Я з'їв(ла) щось солоне, це було чудово на смак!
-mood-effect-MintyEffect = Я з'їв(ла) щось м'ятне, це було прохолодно та освіжаюче.
-mood-effect-PepperEffect = Я з'їв(ла) щось перчене, це було чудово на смак!
-mood-effect-ChocolateEffect = Я з'їв(ла) щось із шоколадом, це було так смачно!
-mood-effect-ButterEffect = Я з'їв(ла) масляний смаколик, міг(могла) би їсти це цілий день.
-mood-effect-DeepFriedEffect = Я з'їв(ла) щось смажене у фритюрі! Це було найсмачніше, що я коли-небудь їв(ла) у своєму житті!
-mood-effect-TastyEffect = Це було справді смачно!
